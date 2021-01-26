@@ -1,0 +1,66 @@
+body{
+    background-color: #2c2c2c;
+    padding: 0;
+    margin: 0;
+}
+
+
+#answer1-card, #question-card, #answer2-card{ 
+    margin: 2%;
+}
+
+.answer-card{
+    width: 30%;
+    min-height: 80%;
+    margin-top: 5%;
+    background-color: white;
+    border-radius: 25px;
+    position: absolute;
+    top: 3%
+
+}
+
+.content{
+    width: 90%;
+    height: 90%;
+    text-align: center;
+    position: relative;
+    left: 5%;
+    top: 5%;
+    padding-top: 5%;
+    user-select: none;
+}
+
+#answer1-card{
+    position: absolute;
+    left: 0;
+}
+
+#question-card{
+    width: 32%;
+    min-height: 85%;
+    background-color: #000000;
+    color: white;
+    border-radius: 25px;
+    position: absolute;
+    top: 1%;
+    left: 33%;
+    z-index: 2;
+    cursor: grab;
+}
+#stacked-card{
+    background-color: grey;
+    width: 32%;
+    min-height: 85%;
+    color: white;
+    border-radius: 25px;
+    position: absolute;
+    top: 4%;
+    left: 36%;
+    z-index: 1;
+}
+
+#answer2-card{
+    position: absolute;
+    left: 67%;
+}

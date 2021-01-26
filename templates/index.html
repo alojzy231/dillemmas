@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dillemmas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <script type="text/javascript" src = "{{ url_for('static', filename='javascript/script.js')}}"></script>
+</head>
+<body>
+    <div id="container">
+        <div id="answer1-card" class = "answer-card">
+            <div id="answer1-content"  class = "content">
+                {{ dillemma.answer_1 }}
+            </div>
+            
+        </div>
+        <div id="question-card">
+            <div id="question-content" class = "content">
+                {{ dillemma.question }}
+            </div>
+            
+        </div>
+        <div id="stacked-card">
+            <div id="stacked-content" class = "content">
+            </div>
+            
+        </div>
+        <div id="answer2-card" class = "answer-card">
+            <div id="answer2-content" class = "content">
+                {{ dillemma.answer_2 }}
+            </div>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
