@@ -11,7 +11,7 @@ window.onload = function(){
 
     questionCard.onmousedown = click;
     
-    var relMousePos;
+    let relMousePos;
 
     questionCard.addEventListener('mousemove', function (e) {
         if(clicked){
@@ -32,7 +32,7 @@ window.onload = function(){
         }
     })
 
-    questionCard.onmouseup = function(e){
+    document.onmouseup = function(e){
         clicked = false;
         let border = 0.1;
         if(relMousePos < -border || relMousePos > border){

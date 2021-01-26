@@ -1,5 +1,6 @@
+import os
 import random
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -24,6 +25,11 @@ def index():
         number = random.randint(1, db.session.query(Dillemma.id).count())
         dillemma = Dillemma.query.get(number)
         return render_template('index.html', dillemma = dillemma)
+
+@app.route('static/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
 if __name__ == '__main__':
