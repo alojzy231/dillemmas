@@ -1,6 +1,8 @@
 window.onload = function(){
 
     let questionCard = document.getElementById("question-card");
+    let answer1Card = document.getElementById("answer1-card");
+    let answer2Card = document.getElementById("answer2-card");
 
     let clicked = false;
     let stop = false;
@@ -39,13 +41,13 @@ window.onload = function(){
         if(!stop){
             if(relMousePos < -border || relMousePos > border){
                 stop = true;
-            setTimeout(function(){ location.reload(); }, 500);
-            if(relMousePos < -border){
-                questionCard.style.transform = `skew(${maxSkew}deg)`;
-                document.getElementById("answer1-card").style.backgroundColor = "green";
-            }else{
-                questionCard.style.transform = `skew(${-maxSkew}deg)`;
-                document.getElementById("answer2-card").style.backgroundColor = "green";
+                setTimeout(function(){ location.reload(); }, 500);
+                if(relMousePos < -border){
+                    questionCard.style.transform = `skew(${maxSkew}deg)`;
+                    answer1Card.style.backgroundColor = "green";
+                }else{
+                    questionCard.style.transform = `skew(${-maxSkew}deg)`;
+                    answer2Card.style.backgroundColor = "green";
             }
         }
     }
@@ -53,6 +55,19 @@ window.onload = function(){
         questionCard.style.cursor = "grab";
     }
 
+    answer1Card.addEventListener('click',function(){
+        setTimeout(function(){ location.reload(); }, 500);
+        stop = true;
+        questionCard.style.transform = `skew(${maxSkew}deg)`;
+        answer1Card.style.backgroundColor = "green";
+    })
+
+    answer2Card.addEventListener('click',function(){
+        setTimeout(function(){ location.reload(); }, 500);
+        stop = true;
+        questionCard.style.transform = `skew(${-maxSkew}deg)`;
+        answer2Card.style.backgroundColor = "green";
+    })
     
 }
 
