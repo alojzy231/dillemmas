@@ -26,7 +26,7 @@ def index():
         dillemma = Dillemma.query.get(number)
         return render_template('index.html', dillemma = dillemma)
 
-@app.route('static/favicon.ico')
+@app.route('/static/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
