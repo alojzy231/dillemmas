@@ -24,21 +24,36 @@ window.onload = function(){
     }
 
     let duration = 1;
+    let timeout;
 
     answer1.onclick=function(){
+        clearTimeout(timeout);
+        
         animatedQuestionContent.innerText = questionContent.innerText;
-        animatedQuestionCard.style.animation = "";
+
+        answer1Content.innerText = "";
+        answer2Content.innerText = "";
+        questionContent.innerText = "";
+
         animatedQuestionCard.style.animation = `left ${duration}s 1`;
+
         newTour();
-        setTimeout(function(){animatedQuestionCard.style.animation = "";},duration * 1000);
+        timeout = setTimeout(function(){animatedQuestionCard.style.animation = "";},duration * 1000);
     }
 
     answer2.onclick=function(){
+        clearTimeout(timeout);
+
         animatedQuestionContent.innerText = questionContent.innerText;
-        animatedQuestionCard.style.animation = "";
+
+        answer1Content.innerText = "";
+        answer2Content.innerText = "";
+        questionContent.innerText = "";
+
         animatedQuestionCard.style.animation = `right ${duration}s 1`;
+        
         newTour();
-        setTimeout(function(){animatedQuestionCard.style.animation = "";},duration * 1000);
+        timeout = setTimeout(function(){animatedQuestionCard.style.animation = "";},duration * 1000);
     }
 
 }
