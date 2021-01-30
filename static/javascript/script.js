@@ -12,7 +12,7 @@ window.onload = function(){
     newTour();
 
     function newTour(){
-        fetch('https://dillemmas.herokuapp.com/get')
+        fetch(window.location.href + '/get')
         .then(res => res.json())
         .then(data => update(data));  
     }
