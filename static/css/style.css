@@ -43,16 +43,46 @@ body{
     z-index: 2;
 }
 
+#animated-question-card{
+    margin: 2%;
+    width: 32%;
+    min-height: 85%;
+    background-color: #000000;
+    color: white;
+    border-radius: 25px;
+    position: absolute;
+    top: 1%;
+    left: 32.5%;
+    z-index: 1;
+}
+
 @keyframes left{
     from{
-        
+        position: absolute;
+        top: 1%;
+        left: 32.5%;
+        z-index: 3;
     }
     to{
-        width: 30%;
-        min-height: 80%;
-        margin-top: 5%;
-        background-color: white;
-        border-radius: 25px;
+        position: absolute;
+        top: 5%;
+        left: 1%;
+        margin: 0;
+    }
+}
+
+@keyframes right{
+    from{
+        position: absolute;
+        top: 1%;
+        left: 32.5%;
+        z-index: 3;
+    }
+    to{
+        position: absolute;
+        top: 5%;
+        left: 68%;
+        margin: 0;
     }
 }
 
@@ -79,11 +109,11 @@ body{
 #answer1-card{
     position: absolute;
     left: 0;
-    z-index: 2;
+    z-index: 4;
 }
 
 #answer2-card{
     position: absolute;
     left: 67%;
-    z-index: 2;
+    z-index: 4;
 }
