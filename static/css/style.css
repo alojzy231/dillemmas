@@ -16,8 +16,8 @@ body{
     background-color: white;
     border-radius: 25px;
     position: absolute;
-    top: 3%
-
+    top: 3%;
+    cursor: pointer;
 }
 
 .content{
@@ -31,11 +31,6 @@ body{
     user-select: none;
 }
 
-#answer1-card{
-    position: absolute;
-    left: 0;
-}
-
 #question-card{
     width: 32%;
     min-height: 85%;
@@ -44,23 +39,51 @@ body{
     border-radius: 25px;
     position: absolute;
     top: 1%;
-    left: 33%;
+    left: 32.5%;
     z-index: 2;
-    cursor: grab;
 }
-#stacked-card{
-    background-color: grey;
+
+@keyframes left{
+    from{
+        
+    }
+    to{
+        width: 30%;
+        min-height: 80%;
+        margin-top: 5%;
+        background-color: white;
+        border-radius: 25px;
+    }
+}
+
+.stacked-answer-card{
     width: 32%;
     min-height: 85%;
+    background-color: #000000;
     color: white;
     border-radius: 25px;
     position: absolute;
-    top: 4%;
-    left: 36%;
+    top: 5%;
     z-index: 1;
+}
+#stacked-answer1-card{
+    position: absolute;
+    left: 1%;
+}
+
+#stacked-answer2-card{
+    position: absolute;
+    left: 68%;
+}
+
+#answer1-card{
+    position: absolute;
+    left: 0;
+    z-index: 2;
 }
 
 #answer2-card{
     position: absolute;
     left: 67%;
+    z-index: 2;
 }

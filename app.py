@@ -1,12 +1,13 @@
 import os
 import random
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request, send_from_directory, jsonify
+from flask_restful import Api, Resource
 from flask_sqlalchemy import SQLAlchemy
-
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///dillemmas.db'
 db = SQLAlchemy(app)
+api = Api(app)
 
 class Dillemma(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -19,12 +20,9 @@ class Dillemma(db.Model):
 
 
 
-@app.route('/', methods = ['GET'])
+@app.route('/')
 def index():
-    if request.method == 'GET':
-        number = random.randint(1, db.session.query(Dillemma.id).count())
-        dillemma = Dillemma.query.get(number)
-        return render_template('index.html', dillemma = dillemma)
+    return render_template('index.html')
 
 @app.route('/static/favicon.ico')
 def favicon():
@@ -32,5 +30,16 @@ def favicon():
                                'favicon.ico', mimetype='image/vnd.microsoft.icon')
 
 
+class REST(Resource):
+    def get(self):
+        number = random.randint(1, db.session.query(Dillemma.id).count())
+        dillemma = Dillemma.query.get(number)
+        return jsonify(answer_1 = dillemma.answer_1,
+                        question = dillemma.question,
+                        answer_2 = dillemma.answer_2)
+
+api.add_resource(REST, "/get")
+
+
 if __name__ == '__main__':
-    app.run()
+    app.run(debug = True)
