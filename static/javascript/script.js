@@ -31,8 +31,6 @@ window.onload = function(){
         
         animatedQuestionContent.innerText = questionContent.innerText;
 
-        answer1Content.innerText = "";
-        answer2Content.innerText = "";
         questionContent.innerText = "";
 
         animatedQuestionCard.style.animation = `left ${duration}s 1`;
@@ -46,8 +44,6 @@ window.onload = function(){
 
         animatedQuestionContent.innerText = questionContent.innerText;
 
-        answer1Content.innerText = "";
-        answer2Content.innerText = "";
         questionContent.innerText = "";
 
         animatedQuestionCard.style.animation = `right ${duration}s 1`;
